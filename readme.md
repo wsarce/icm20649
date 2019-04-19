@@ -9,3 +9,13 @@
 
 
 This software is written by Ketil Røed and is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php)
+
+
+## Features
+
+
+
+## Resources
+
+- [Datasheet](http://www.invensense.com/wp-content/uploads/2016/06/DS-000192-ICM-20649-v1.0.pdf)
+- [Evaluation board](https://no.mouser.com/datasheet/2/400/AN-IVS-0001EVB-00%20v1%202-1112214.pdf)
