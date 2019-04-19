@@ -2,8 +2,8 @@
  * @Author: Ketil Røed
  * @Date:   2019-04-19T13:39:33+02:00
  * @Filename: ICM20649.h
- * @Last modified by:   Ketil Røed
- * @Last modified time: 2019-04-19T13:53:34+02:00
+ * @Last modified by:   ketilroe
+ * @Last modified time: 2019-04-19T16:01:07+02:00
  * @Copyright: Ketil Røed
  */
 
@@ -17,8 +17,11 @@
 
 
 
+
 #ifndef ICM20649_H
 #define ICM20649_H
+
+#define DEBUG  // 
 
 #include "Arduino.h"
 

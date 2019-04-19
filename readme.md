@@ -1,7 +1,7 @@
 # InvenSense 6-axis Accelerometer and Gyroscope(ICM20649)
 
 
-##Usage
+## Usage
 ```
 1. Git clone this repository to your Arduino IDE's libraries directory.
 2. Run the demo "icm20649_example" in the examples directory.

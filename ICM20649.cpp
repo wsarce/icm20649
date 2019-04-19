@@ -1,3 +1,13 @@
+/**
+ * @Author: Ketil Røed <ketilroe>
+ * @Date:   2019-04-19T15:02:44+02:00
+ * @Filename: ICM20649.cpp
+ * @Last modified by:   ketilroe
+ * @Last modified time: 2019-04-19T16:15:47+02:00
+ * @Copyright: Ketil Røed
+ */
+
+
 
 /*
   ICM20649.cpp - Library InvenSense 6-axis gyro and accelerometer (ICM20649)
@@ -19,7 +29,7 @@
 
 ICM20649::ICM20649(void)
 {
-
+  Wire.begin();
 }
 
 
@@ -28,13 +38,15 @@ ICM20649::ICM20649(void)
 
 bool ICM20649::initialize(icm20649AccelRange_t rangeAccel, icm20649GyroRange_t rangeGyro){
     //switch to user bank 0
-    writeByte(ICM20649_ADDR, REG_BANK_SEL, 0x00);
+
     deviceID = readByte(ICM20649_ADDR,WHO_AM_I_ICM20649);
+
     if (deviceID != ICM20649_ID)
     {
       return false;
     }
 
+    writeByte(ICM20649_ADDR, REG_BANK_SEL, 0x00);
     writeByte(ICM20649_ADDR,PWR_MGMT_1, 0x01);
 
     //switch to user bank 2
@@ -206,8 +218,6 @@ void ICM20649::readTemperature(void)
 
 
   tempRaw = (buf[0] << 8) | buf[1];
-  tempRaw2 = readByte(ICM20649_ADDR,TEMP_OUT_H) << 8 ;
-  tempRaw2 |= readByte(ICM20649_ADDR,TEMP_OUT_L) ;
 
 
 
