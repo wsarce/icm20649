@@ -11,6 +11,8 @@
 #include <Arduino.h>
 #include <ICM20649.h>
 
+
+
 ICM20649 imu;
 int ledPin = 13;
 
@@ -18,6 +20,7 @@ void setupPorts(){
     pinMode(ledPin,OUTPUT);
     pinMode(2,OUTPUT);
     digitalWrite(2,HIGH);
+
 }
 
 void setup() {
@@ -25,8 +28,8 @@ void setup() {
     setupPorts();
     if(!imu.initialize(ACCEL_RANGE_8G, GYRO_RANGE_2000DPS))
     {
-        Serial.println("Incorrect ID!");
-    };
+        Serial.println("Connection to IMU can not be established. Check wiring.");
+    };  
 }
 
 
@@ -52,7 +55,7 @@ void loop() {
     Serial.print(",");
     Serial.print(imu.gyroDPS.z,2);
     Serial.print(",  ");
-    Serial.print(imu.tempRaw,HEX);
-    Serial.print(",  ");
-    Serial.println(imu.tempRaw2,HEX);
+    Serial.println(imu.tempRaw,HEX);
+  
+
 }
