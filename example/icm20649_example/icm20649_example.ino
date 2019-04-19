@@ -18,9 +18,6 @@ int ledPin = 13;
 
 void setupPorts(){
     pinMode(ledPin,OUTPUT);
-    pinMode(2,OUTPUT);
-    digitalWrite(2,HIGH);
-
 }
 
 void setup() {
