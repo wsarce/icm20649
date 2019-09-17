@@ -1,5 +1,6 @@
 # InvenSense 6-axis Accelerometer and Gyroscope(ICM20649)
 
+Inspired by https://github.com/drcpattison/DPEng_ICM20948_AK09916
 
 ## Usage
 ```
