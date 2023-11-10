@@ -35,7 +35,6 @@ bool ICM20649::initialize(icm20649AccelRange_t rangeAccel, icm20649GyroRange_t r
     //switch to user bank 0
 
     deviceID = readByte(ICM20649_ADDR,WHO_AM_I_ICM20649);
-
     if (deviceID != ICM20649_ID)
     {
       return false;
@@ -236,16 +235,14 @@ void ICM20649::readTemperature(void)
  }
 
 
- uint8_t ICM20649::readByte(int dev_addr,uint8_t reg)
+ uint8_t ICM20649::readByte(int dev_addr, uint8_t reg)
  {
   uint8_t value=0;
   Wire.beginTransmission(dev_addr);
   Wire.write(reg);
-  if (Wire.endTransmission(false) != 0) return 0;
+  Wire.endTransmission();
   Wire.requestFrom(dev_addr, 1);
-  if (Wire.available() >= 1){
-    value = Wire.read();
-  }
+  value = Wire.read();
   return value;
  }
 
