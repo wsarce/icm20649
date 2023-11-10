@@ -29,12 +29,7 @@
 
 ICM20649::ICM20649(void)
 {
-  Wire.begin();
 }
-
-
-
-
 
 bool ICM20649::initialize(icm20649AccelRange_t rangeAccel, icm20649GyroRange_t rangeGyro){
     //switch to user bank 0
